@@ -118,7 +118,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]         # new
 
+# redirect user automatically to the home page after he/she sucessfully login
 LOGIN_REDIRECT_URL = "home" # new
+
+# redirect user automatically to the home page after he/she sucessfully logout
+LOGOUT_REDIRECT_URL = "home" # new
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
