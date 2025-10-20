@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "whitenoise.runserver_nostatic",       # New - use whitenoise
     'django.contrib.staticfiles',
     "blog.apps.BlogConfig",
     "accounts.apps.AccountsConfig",
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",      # New - use whitenoise
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -118,8 +120,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]        
+
+# using STATIC_ROOT and STATICFILES_STORAGE to collect and store static files form different apps
+
 STATIC_ROOT = BASE_DIR / "staticfiles" # new
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage" # new
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"       # New - use whitenoise  STATICFILES_STORAGE
+
+# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage" # new  - using django defaut STATICFILES_STORAGE
 
 # redirect user automatically to the home page after he/she sucessfully login
 LOGIN_REDIRECT_URL = "home" # new
