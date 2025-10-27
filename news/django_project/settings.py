@@ -124,4 +124,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = "accounts.CustomUser"       # NEW
+AUTH_USER_MODEL = "accounts.CustomUser"       # NEW - to tell Django to use our new custom user model in place of the built-in User model
