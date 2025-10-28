@@ -57,7 +57,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],     # NEW
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,3 +125,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "accounts.CustomUser"       # NEW - to tell Django to use our new custom user model in place of the built-in User model
+
+LOGIN_REDIRECT_URL = "home" # new  -- where to direct user after successful LogIn
+LOGOUT_REDIRECT_URL = "home" # new  -- where to direct user after successful LogOut
