@@ -43,6 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 3rd Party
+    "crispy_forms",       # NEW - Add Crispy_forms app (base app) to installed apps after install it "python3 -m pip install django-crispy-forms"
+    "crispy_bootstrap5",       # NEW - Add Crispy_forms Bootstrap app flavor to be integrated with Bootstrap after installing it "python3 -m pip install crispy-bootstrap5" 
+
+    # Local
     "accounts.apps.AccountsConfig",      # NEW
     "pages.apps.PagesConfig",
 ]
@@ -135,3 +141,6 @@ AUTH_USER_MODEL = "accounts.CustomUser"       # NEW - to tell Django to use our 
 
 LOGIN_REDIRECT_URL = "home" # new  -- where to direct user after successful LogIn
 LOGOUT_REDIRECT_URL = "home" # new  -- where to direct user after successful LogOut
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5" # New - start using Crispy django form - a third party tool for styling django forms compatible with tools like Bootstrap and Tailwind 
+CRISPY_TEMPLATE_PACK = "bootstrap5" # new  configure bootstrap5 - crispy_template_package
