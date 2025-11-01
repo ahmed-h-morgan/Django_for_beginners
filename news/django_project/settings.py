@@ -144,3 +144,6 @@ LOGOUT_REDIRECT_URL = "home" # new  -- where to direct user after successful Log
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5" # New - start using Crispy django form - a third party tool for styling django forms compatible with tools like Bootstrap and Tailwind 
 CRISPY_TEMPLATE_PACK = "bootstrap5" # new  configure bootstrap5 - crispy_template_package
+
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"       # NEW -  E-mail configuration to simulate sending email to the console (for development phase)
