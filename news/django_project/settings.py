@@ -51,9 +51,9 @@ INSTALLED_APPS = [
     # Local
     "accounts.apps.AccountsConfig",      # NEW
     "pages.apps.PagesConfig",
+    "articles.apps.ArticlesConfig",      # NEW
 ]
 
-#AUTH_USER_MODEL = "accounts.CustomUser"       # NEW
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -120,7 +120,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Cairo'        # update to use Cairo / Egypt time zone
 
 USE_I18N = True
 
