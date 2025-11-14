@@ -50,6 +50,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView): # new
     "body",
     )
     def form_valid(self, form): # new
+        # Set the author to current user before saving
         form.instance.author = self.request.user
         return super().form_valid(form)
 
