@@ -53,4 +53,3 @@ class ArticleCreateView(LoginRequiredMixin, CreateView): # new
         # Set the author to current user before saving
         form.instance.author = self.request.user
         return super().form_valid(form)
-
