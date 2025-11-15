@@ -1,6 +1,8 @@
 <!-- templates/article_detail.html -->
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %} <!-- new!-->
+
 {% block content %}
 
 <div class="article-entry">
@@ -18,7 +20,15 @@
 <hr> 
 <!-- Changes end here!-->
 
+<!-- Changes start here!-->
+<h4>Add a comment</h4>
+<form action="" method="post">
+    {% csrf_token %} 
+    {{ form|crispy }} 
+    <button class="btn btn-success ml-2" type="submit">Save</button> 
+</form>
 
+<!-- Changes start here!-->
 
 <p><a href="{% url 'article_edit' article.pk %}">Edit</a> |
     <a href="{% url 'article_delete' article.pk %}">Delete</a></p>

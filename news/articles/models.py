@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.conf import settings     # to be able to use the customized user_model by settings.AUTH_USER_MODEL as below
 
 
+
 # Create your models here.
 
 class Article(models.Model):
